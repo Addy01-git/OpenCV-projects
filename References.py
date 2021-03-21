@@ -369,7 +369,7 @@ cv2.waitKey(0)
 
 # Video face detection
 
-
+'''
 faceCascade = cv2.CascadeClassifier('Resources/haarcascades/haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
 
@@ -383,4 +383,4 @@ while True:
     cv2.imshow("Video", img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
+'''
