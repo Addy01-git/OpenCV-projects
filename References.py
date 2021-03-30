@@ -379,7 +379,7 @@ while True:
     faces = faceCascade.detectMultiScale(imgGray, 1.1, 4)
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-        cv2.putText(img, "some name", (x+w//2, y-10), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 0), 1)
+        cv2.putText(img, "Face", (x+w//2, y-10), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 0), 1)
     cv2.imshow("Video", img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
