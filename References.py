@@ -42,11 +42,11 @@ while True:
 # Colors, blur, canny, dilation, erosion
 
 '''
-kernel = np.ones((5, 5), np.uint8)              # 5x5 matrix of 1, np.uint8 --> values range from 0 to 255
+kernel = np.ones((5, 5), np.uint8)                                  # 5x5 matrix of 1, np.uint8 --> values range from 0 to 255
 img = cv2.imread('Resources/lenna_opencv.png')
 imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-imgBlur = cv2.GaussianBlur(img, (7, 7), 0)      # (7, 7) --> kernel (has to be odd), 0 --> sigmax
-imgCanny = cv2.Canny(img ,100, 100)             # 100, 100 --> threshold values
+imgBlur = cv2.GaussianBlur(img, (7, 7), 0)                          # (7, 7) --> kernel (has to be odd), 0 --> sigmax
+imgCanny = cv2.Canny(img ,100, 100)                                 # 100, 100 --> threshold values
 imgDilation = cv2.dilate(imgCanny, kernel, iterations = 1)
 imgEroded = cv2.erode(imgDilation, kernel, iterations = 1)
 
@@ -67,11 +67,11 @@ cv2.waitKey(0)
 # Origin of an image is top left corner
 
 img = cv2.imread('Resources/lambo.png')
-img = cv2.resize(img, (623, 462))              # (width, height)
+img = cv2.resize(img, (623, 462))                                   # (width, height)
 imgResize = cv2.resize(img, (1000, 500))
-print(img.shape)                               # gives size
-print(imgResize.shape)                         # gives size
-imgCrop = img[0:200, 200:500]                  # (height, width)
+print(img.shape)                                                                    # gives size
+print(imgResize.shape)                                                              # gives size
+imgCrop = img[0:200, 200:500]                                                       # (height, width)
 
 cv2.imshow("Original", img)
 cv2.imshow("Cropped", imgCrop)
@@ -131,8 +131,8 @@ cv2.waitKey(0)
 '''
 img = cv2.imread("Resources/cards.jpg")                                     
 width, height = 250, 350
-pts1 = np.float32([ [111, 219], [287, 188], [154, 482], [352, 440] ])       # float array with 4 corners of cards
-pts2 = np.float32([[0,0], [width, 0], [0, height], [width, height]])        # defining which corner is what
+pts1 = np.float32([ [111, 219], [287, 188], [154, 482], [352, 440] ])               # float array with 4 corners of cards
+pts2 = np.float32([[0,0], [width, 0], [0, height], [width, height]])                # defining which corner is what
 matrix = cv2.getPerspectiveTransform(pts1, pts2)
 imgOutput = cv2.warpPerspective(img, matrix, (width, height))
 
