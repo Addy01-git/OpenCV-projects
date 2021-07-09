@@ -30,3 +30,9 @@ while True:
         cv2.imshow('Result', img)
         cv2.waitKey(500)
         count += 1
+
+    if cv2.waitKey(1) & 0xff == ord('q'):
+        break
+        
+cv2.destroyAllWindows()
+cap.release()
